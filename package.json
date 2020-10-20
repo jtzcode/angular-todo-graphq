@@ -1,0 +1,21 @@
+{
+  "name": "angular-todo-graphq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mongoose": "^5.7.36",
+    "mongoose": "^5.10.9"
+  },
+  "dependencies": {
+    "@types/graphql": "^14.5.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.0"
+  }
+}
