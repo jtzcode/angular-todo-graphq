@@ -28,6 +28,7 @@
     "apollo-angular-link-http": "^1.11.0",
     "apollo-client": "^2.6.10",
     "graphql": "^15.0.0",
+    "guid-typescript": "^1.0.9",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

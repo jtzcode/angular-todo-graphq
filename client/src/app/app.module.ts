@@ -23,13 +23,15 @@ import { GraphQLModule } from './graphql.module';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AllTasksComponent } from './components/all-tasks/all-tasks.component';
 import { OverdueTasksComponent } from './components/overdue-tasks/overdue-tasks.component';
+import { TodoCardComponent } from './components/todo-card/todo-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTaskComponent,
     AllTasksComponent,
-    OverdueTasksComponent
+    OverdueTasksComponent,
+    TodoCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,44 @@
-<p>add-task works!</p>
+<div class="centerDiv" layout-fill layout="column" layout-align="center none">
+    <form name="form" (ngSubmit)="f.form.valid && Add()" #f="ngForm">
+        <div layout="row" layout-align="center none">
+            <mat-card>
+                <mat-card-title>
+                    <span class="mat-headline">Add To-Do Item</span>
+                </mat-card-title>
+                <mat-card-content>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Title" [(ngModel)]="title" name="title" #title="ngModel" required />
+                    </mat-form-field>
+                    <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                        <div *ngIf="title.errors.required">
+                            You must add a title.
+                        </div>
+                    </div>
+                    <mat-form-field>
+                        <textarea matInput placeholder="Description" [(ngModel)]="description" name="description"
+                          #description="ngModel" required></textarea>
+                    </mat-form-field>
+                    <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+                        <div *ngIf="description.errors.required">
+                            You must add a description.
+                        </div>
+                    </div>
+                    <mat-form-field>
+                        <input matInput [min]="earliestDate" [matDatepicker]="picker" name="datepicker" placeholder="Due date"
+                          #datepicker="ngModel" required [(ngModel)]="dueDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <div *ngIf="datepicker.invalid && (datepicker.dirty || datepicker.touched)" class="alert alert-danger">
+                        <div *ngIf="datepicker.errors.required">
+                            You must select a due date.
+                        </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button class="btn btn-primary">Save</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </form>
+</div>
