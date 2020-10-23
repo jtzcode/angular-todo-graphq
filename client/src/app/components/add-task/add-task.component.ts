@@ -12,8 +12,8 @@ import { Guid } from 'guid-typescript';
 export class AddTaskComponent implements OnInit {
 
   earliestDate: Date;
-  title: string;
-  descripton?: string;
+  Title: string;
+  Description?: string;
   dueDate: Date;
   constructor(private apollo: Apollo) { }
 
@@ -23,10 +23,11 @@ export class AddTaskComponent implements OnInit {
 
   Add(): void {
     const todo: ITodoItemInput = new TodoItemInput();
-    todo.Id = Guid.create.toString();
+    todo.Completed = false;
+    todo.Id = Guid.create().toString();
     todo.CreationDate = new Date();
-    todo.Title = this.title;
-    todo.Description = this.descripton;
+    todo.Title = this.Title;
+    todo.Description = this.Description;
     todo.DueDate = this.dueDate;
 
     this.apollo.mutate({
@@ -41,11 +42,12 @@ export class AddTaskComponent implements OnInit {
         input: todo
       }
     }).subscribe();
+    this.Reset();
   }
 
   private Reset(): void {
-    this.title = '';
-    this.descripton = '';
+    this.Title = '';
+    this.Description = '';
     this.dueDate = null;
   }
 

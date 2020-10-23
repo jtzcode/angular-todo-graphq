@@ -7,7 +7,7 @@
                 </mat-card-title>
                 <mat-card-content>
                     <mat-form-field>
-                        <input type="text" matInput placeholder="Title" [(ngModel)]="title" name="title" #title="ngModel" required />
+                        <input type="text" name="title" matInput placeholder="Title" [(ngModel)]="Title" #title="ngModel" required />
                     </mat-form-field>
                     <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
                         <div *ngIf="title.errors.required">
@@ -15,8 +15,7 @@
                         </div>
                     </div>
                     <mat-form-field>
-                        <textarea matInput placeholder="Description" [(ngModel)]="description" name="description"
-                          #description="ngModel" required></textarea>
+                        <textarea matInput placeholder="Description" [(ngModel)]="Description" name="description" #description="ngModel" required></textarea>
                     </mat-form-field>
                     <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
                         <div *ngIf="description.errors.required">

@@ -2,6 +2,6 @@
 <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="20px grid" fxLayoutAlign="left">
     <ngt-todo-card 
       *ngFor="let todo of todos"
-      [Todo]="todo"
+      [todo]="todo"
       (deleted)="resubscribe($event)"></ngt-todo-card>
 </div>
