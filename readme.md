@@ -5,3 +5,4 @@
 4. 使用GraphQL时，**解析器**代表单个字段（参考`TodoItemResolver`类）。它获取我们需要的数据，实际上为GraphQL服务器提供了详细的指令，告诉它如何把查询转换为数据项（可以把这一点理解为我们为修改数据和查询数据创建单独架构的原因之一，即我们**不能使用查询字段的逻辑来修改字段**）。从这一点可以看到，**字段和解析器之间是一对一映射的关系**。
 5. 更多关于Graphql的内容可以参考官方文档：https://typegraphql.com/docs/resolvers.html
 6. 对于Angular Component，一般在`ngOnInit`方法中订阅Subject的数据，调用`subscribe`方法。
+7. 对于server的代码，可以使用`tsc`命令直接编译，为了防止client端代码干扰，可以在`tsconfig.json`里面配置`exclude`选项，忽略一些folder。
